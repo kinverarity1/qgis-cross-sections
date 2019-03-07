@@ -104,7 +104,7 @@ def run(
         bottom = max([r["bottom"] for r in rlayers])
 
     slines = []
-    for sline_feature in layer.selectedFeatures():
+    for sline_feature in iface.activeLayer().selectedFeatures():
         geom = sline_feature.geometry()
         if geom.type() == QgsWkbTypes.LineGeometry:
             lines = geom.asMultiPolyline()
